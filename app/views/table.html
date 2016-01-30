@@ -1,1 +1,48 @@
-<p>This is the table view.</p>
+<div ng-controller="TableCtrl">
+
+  <form class="form-inline" ng-submit="addItem(row)" role="form">
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input type="text" class="form-control" id="name" ng-model="row.name">
+    </div>
+
+    <div class="form-group">
+      <label for="note">Note: </label>
+      <input type="text" class="form-control" id="note" ng-model="row.note"/>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-sm btn-success">
+        <i class="glyphicon glyphicon-plus"></i> Add item
+      </button>
+    </div>
+  </form>
+
+  <br/>
+  <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+    <thead>
+    <tr>
+      <th ng-repeat="header in headersTable">{{header}}</th>
+    </tr>
+    <!--<tr>-->
+      <!--<th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>-->
+    <!--</tr>-->
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in displayedCollection">
+      <td>{{row.name}}</td>
+      <td>{{row.completed}}</td>
+      <td>{{row.note}}</td>
+      <td>{{row.updated}}</td>
+      <td>
+        <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+          <i class="glyphicon glyphicon-remove-circle">
+          </i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>

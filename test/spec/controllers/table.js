@@ -20,4 +20,8 @@ describe('Controller: TableCtrl', function () {
   it('should attach a list of awesomeThings to the scope', function () {
     expect(TableCtrl.awesomeThings.length).toBe(3);
   });
+
+  it('Should attach a list of table to the scope', function () {
+    expect(scope.headersTable.length).toBe(4);
+  });
 });
