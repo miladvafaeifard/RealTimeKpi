@@ -1,5 +1,5 @@
 {
-  "name": "Real Time Kpi",
+  "name": "realtimekpi",
   "private": true,
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
